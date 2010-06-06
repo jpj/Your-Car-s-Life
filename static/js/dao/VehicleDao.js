@@ -2,7 +2,7 @@ function VehicleDao() {
 
 	this.getVehicles = function(vehicleFilterInputData, view, callback) {
 		getVehicles(vehicleFilterInputData, view, callback);
-	}
+	};
 
 	var getVehicles = function(inputData, view, callback) {
 
@@ -56,6 +56,6 @@ function VehicleDao() {
 			if (typeof callback == "function") {
 				callback();
 			}
-		}
-	}
+		};
+	};
 }

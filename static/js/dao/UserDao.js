@@ -21,7 +21,7 @@ function UserDao() {
 				}
 			}
 		});
-	}
+	};
 
 	this.logoutUser = function(view) {
 		$.ajax({
@@ -40,5 +40,5 @@ function UserDao() {
 				}
 			}
 		});
-	}
+	};
 }

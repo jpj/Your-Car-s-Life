@@ -5,7 +5,7 @@ function LogRecordDao() {
 		} catch(e) {
 			throw e;
 		}
-	}
+	};
 
 	var getLogRecords = function(inputData, view, callback) {
 		//alert("getting records for vehicle " + inputData.vehicleId)
@@ -77,8 +77,8 @@ function LogRecordDao() {
 			if (typeof callback == "function") {
 				callback();
 			}
-		}
-	}
+		};
+	};
 
 	/**
 	 * saveLogRecord
@@ -139,6 +139,6 @@ function LogRecordDao() {
 
 
 			view.finish();
-		}
-	}
+		};
+	};
 }
