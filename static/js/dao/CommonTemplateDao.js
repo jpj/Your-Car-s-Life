@@ -2,23 +2,23 @@ function CommonTemplateDao() {
 
 	this.getCommonTemplateByKey = function(key, view, callback) {
 		getCommonTemplateByKey(key, view, callback);
-	}
+	};
 	
 	this.getCommonTemplateList = function(view) {
 		getCommonTemplateList(view);
-	}
+	};
 	
 	this.updateCommonTemplate = function(commonTemplate, view) {
 		updateCommonTemplate(commonTemplate, view);
-	}
+	};
 	
 	this.updateCommonTemplateDeletedFlag = function(key, flag, view, callback) {
 		updateCommonTemplateDeletedFlag(key, flag, view, callback);
-	}
+	};
 	
 	this.addCommonTemplate = function(commonTemplate, view, callback) {
 		addCommonTemplate(commonTemplate, view, callback);
-	}
+	};
 
 	var getCommonTemplateByKey = function(key, view, callback) {
 		//alert("getCommonTemplateByKey called");
@@ -62,9 +62,9 @@ function CommonTemplateDao() {
 			} else {
 				view.setTemplateLoadMsg( $("error", xml).text() );
 			}
-		}
+		};
 		
-	}
+	};
 	
 	var getCommonTemplateList = function(view) {
 		$.ajax({
@@ -95,8 +95,8 @@ function CommonTemplateDao() {
 				commonTemplate.templateText = $(this).find("text").text();
 				view.addCommonTemplateToList(commonTemplate);
 			});
-		}
-	}
+		};
+	};
 	
 	var updateCommonTemplate = function(commonTemplate, view) {
 		view.setTemplateSaveMsg("Processing...");
@@ -133,8 +133,8 @@ function CommonTemplateDao() {
 				view.setTemplateSaveMsg( "Template Saved" );
 				getCommonTemplateList(view);
 			}
-		}
-	}
+		};
+	};
 
 	var updateCommonTemplateDeletedFlag = function(key, flag, view, callback) {
 		view.setTemplateLoadMsg("Processing...");
@@ -171,8 +171,8 @@ function CommonTemplateDao() {
 					callback();
 				}
 			}
-		}
-	}
+		};
+	};
 	
 	var addCommonTemplate = function(commonTemplate, view, callback) {
 		//alert("addCommonTemplate adding");
@@ -217,7 +217,7 @@ function CommonTemplateDao() {
 					callback();
 				}
 			}
-		}
-	}
+		};
+	};
 
 }
