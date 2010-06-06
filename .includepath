@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includepath>
+  <includepathentry path="htdocs/app/classes" />
+  <includepathentry path="/home/josh/workspace/le_common/lib" />
+  <includepathentry path="/home/josh/workspace/modiframework/lib" />
+  <includepathentry path="/home/josh/workspace/le_commonweb/lib" />
+</includepath>
+

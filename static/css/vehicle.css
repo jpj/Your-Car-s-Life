@@ -1,0 +1,6 @@
+#vehicleRecords .record .entry.name {
+	width: 100px;
+}
+#vehicleRecords .record .entry.notes {
+	width: 150px;
+}

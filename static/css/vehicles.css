@@ -1,0 +1,14 @@
+.vehicleRecordEntry {
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 50px;
+}
+
+.vehicleRecordDefault {
+	width: 30px;
+}
+
+

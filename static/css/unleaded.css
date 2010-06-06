@@ -1,0 +1,178 @@
+/***************************************************
+ * Tag styles
+ ***************************************************/
+
+td {
+	vertical-align: top;
+}
+
+
+
+/***************************************************
+ * General styles
+ ***************************************************/
+.messageError {
+	background-color: red;
+}
+.messageInfo {
+	background-color: #fffaa3;
+}
+.messageSuccess {
+	background-color: green;
+}
+
+
+
+/***************************************************
+ * Specific styles
+ ***************************************************/
+#addRecordForm input[type=text] {
+	width: 200px;
+}
+
+
+
+
+
+.error {
+	background-color: red;
+}
+
+.errorText {
+	color: red;
+}
+
+
+
+/***************************************************
+ * Log Records
+ ***************************************************/
+
+.logEntryForm {
+	background-color: #ffffff;
+	border: 1px #000000 solid;
+	float: left;
+	margin: 10px 25px 10px 25px;
+	padding: 5px;
+	/*position: absolute;*/
+}
+#logRecordContainer {
+	float: left;
+}
+
+#logRecordExample {
+	display: none;
+}
+
+#logRecordHeader {
+	display: block;
+}
+
+#logRecordStats {
+	margin-bottom: 10px;
+}
+
+#logRecordStatsAverage {
+	font-weight: bold;
+}
+
+#logRecordStatsTotalRecords {
+	font-weight: bold;
+}
+
+.logRecordMessage {
+	display: none;
+}
+
+.logRecordFresh {
+	background-color: khaki;
+}
+
+.logRecord {
+	clear: left;
+	display: none;
+}
+
+.logRecordEntry {
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 50px;
+}
+.logRecordEntry input {
+	display: none;
+}
+
+.logRecordId {
+	width: 27px;
+}
+
+.logRecordDate {
+	width: 130px;
+}
+
+.logRecordOdometer {
+	width: 55px;
+}
+
+.logRecordGallons {
+	width: 50px;
+}
+
+.logRecordOctane {
+	width: 25px;
+}
+
+.logRecordMiles {
+	width: 45px;
+}
+
+.logRecordMPG {
+	width: 45px;
+}
+
+.logRecordModify {
+	width: 85px;
+}
+.logRecordActive {
+	background-color: khaki;
+}
+
+#addNewRecordContainer {
+	display: none;
+}
+
+
+
+/***************************************************
+ * Dipstick
+ ***************************************************/
+.dipstick {
+	background-color: #000000;
+	float: left;
+	padding: 3px 1px 3px 1px;
+}
+
+.dipstick div {
+	background-color: brown;
+	font-size: 8pt;
+	height: 100px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 25px;
+}
+
+.dipstick div div {
+	background-color: silver;
+	height: 100%;
+}
+
+#addRecordDipstick {
+	clear: left;
+}
+
+
+
+

@@ -1,0 +1,11 @@
+<saveLogRecord>
+	<% foreach my $error (@{$modi_mav->getObject("errors")}) { %>
+	<error><%=$error%></error>
+	<% } %>
+	<% foreach my $error (@{$modi_formerrors->getFieldErrors()}) { %>
+	<error field="<%=$error->getField()%>"><%=$error->getMessage()%></error>
+	<% } %>
+	<message><%=$modi_mav->getObject("message")%></message>
+	<logRecordId><%=$modi_formdata->getLogRecordId()%></logRecordId>
+	<gallons><%=$modi_formdata->getGallons()%></gallons>
+</saveLogRecord>

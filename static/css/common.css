@@ -1,0 +1,27 @@
+form {
+	margin: 0;
+}
+
+div.row {
+	clear: both;
+}
+div.row .cell {
+	float: left;
+}
+
+.suggestionStyle {
+	color: #707070;
+}
+
+.available {
+	display: none;
+}
+
+.pageSection {
+	border: 1px solid #eeeeee;
+	margin: 15px;
+}
+
+.label {
+	color: #c0c0c0;
+}

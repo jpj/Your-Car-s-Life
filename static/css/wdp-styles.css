@@ -1,0 +1,108 @@
+.confirmBox {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	display: none;
+	position: absolute;
+	z-index: 0;
+}
+
+.confirmBox .button {
+	border-top: 1px solid #f5f5f5;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #f5f5f5;
+	background-color: #D4D0C8;
+	cursor: default;
+	float: left;
+	padding: 3px;
+	margin-right: 5px;
+}
+
+.confirmBox .msg, .confirmBox .buttons {
+	margin-bottom: 5px;
+	padding: 0 1em;
+}
+.confirmBox .buttons {
+	margin-bottom: 15px;
+}
+
+.confirmBox .handle {
+	/*cursor: move;*/
+}
+
+.closeIcon {
+	color: #000000;
+	cursor: default;
+	padding: .2em .5em;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.closeIcon:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.deleted {
+	background-color: #ff5b5b;
+}
+
+div.row {
+	clear: both;
+}
+div.row .cell {
+	float: left;
+}
+
+h1 {
+	padding-left: 1em;
+}
+
+.hiddenAttribute {
+	display: none;
+}
+
+input:focus, textarea:focus {
+	background-color: #E7F6FF;
+}
+
+label {
+	/*background-color: #ffffff;*/
+	/*border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #f5f5f5;
+	border-left: 1px solid #000000;*/
+	padding: 3px;
+}
+
+.message {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	margin: 3px 0;
+	padding: 3px;
+}
+.message.success {
+}
+div.message {
+	border-left: 0;
+	border-right: 0;
+}
+
+.needSpace {
+	margin-bottom: 1em;
+}
+
+.suggestionStyle {
+	color: #707070;
+}
+
+.titleBar {
+	background-color: #9ECE63;
+	color: #f5f5f5;
+	padding: .2em;
+	position: relative;
+}
+
+.windowActive {
+	background-color: #E7F6FF;
+}

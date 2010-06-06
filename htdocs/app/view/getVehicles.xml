@@ -1,0 +1,18 @@
+<vehicles>
+	<%--
+	<% foreach my $error (@{$modi_mav->getObject("errors")}) { %>
+	<error><%=$error%></error>
+	<% } %>
+	--%>
+	<% foreach my $error (@{$modi_formerrors->getFieldErrors()}) { %>
+	<error field="<%=$error->getField()%>"><%=$error->getMessage()%></error>
+	<% } %>
+
+	<% foreach my $vehicle (@{$modi_mav->getObject("vehicleList")}) { %>
+	<vehicle>
+		<vehicleId><%=$vehicle->getVehicleId()%></vehicleId>
+		<name><%=$vehicle->getName()%></name>
+		<notes><%=$vehicle->getNotes()%></notes>
+	</vehicle>
+	<% } %>
+</vehicles>

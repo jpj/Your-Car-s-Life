@@ -1,0 +1,2 @@
+- Ajax popup/show on main page.
+- Form has email and password. No verification.

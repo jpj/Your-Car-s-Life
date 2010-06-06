@@ -1,0 +1,127 @@
+#vehicleLogRecord {
+	width: 475px;
+}
+
+/* List */
+#vehicleLogRecord .record.item {
+	border-bottom: 1px dotted #c0c0c0;
+	cursor: default;
+}
+
+/* Odd/Even */
+#vehicleLogRecord .record.item.odd {
+	background-color: #eeeeee;
+}
+#vehicleLogRecord .record.item.even {
+	background-color: #ebebeb;
+}
+
+#vehicleLogRecord .record.item:hover {
+	background-color: #E0ECF8;
+}
+
+#vehicleLogRecord .record.item:hover .entry.notcrucial {
+	display: block;
+}
+
+#vehicleLogRecord .record {
+	height: 40px;
+	position: relative;
+}
+
+#vehicleLogRecord .record .entry {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	white-space: nowrap;
+}
+
+#vehicleLogRecord .record .entry.notcrucial {
+	/*display: none;*/
+}
+
+#vehicleLogRecord .record .entry.id {
+	display: none;
+	left: 0;
+	width: 50px;
+}
+#vehicleLogRecord .record .entry.date {
+	left: 10px;
+	width: 70px;
+}
+#vehicleLogRecord .record .entry.odometerlabel {
+	left: 10px;
+	top: 20px;
+	width: 70px;
+}
+#vehicleLogRecord .record .entry.odometer {
+	left: 80px;
+	top: 20px;
+	width: 75px;
+}
+#vehicleLogRecord .record .entry.fuellabel {
+	left: 150px;
+}
+#vehicleLogRecord .record .entry.gallons {
+	left: 185px;
+}
+#vehicleLogRecord .record .entry.octanelabel {
+	left: 235px;
+}
+#vehicleLogRecord .record .entry.octane {
+	left: 295px;
+	width: 50px;
+}
+#vehicleLogRecord .record .entry.distancelabel {
+	left: 235px;
+	top: 20px;
+	width: 60px;
+}
+#vehicleLogRecord .record .entry.miles {
+	left: 295px;
+	top: 20px;
+	width: 50px;
+}
+#vehicleLogRecord .record .entry.economylabel {
+	right: 44px;
+	top: 20px;
+}
+#vehicleLogRecord .record .entry.mpg {
+	right: 0;
+	top: 20px;
+	width: 40px;
+}
+
+#logRecordForm {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	display: none;
+	left: 100px;
+	padding: 10px;
+	position: absolute;
+	top: 100px;
+	width: 500px;
+	z-index: 2;
+}
+#logRecordForm .message {
+	display: none;
+}
+#logRecordForm .close {
+	position: absolute;
+	right: 5px;
+	top: 3px;
+}
+
+#logRecordForm .container {
+	padding: 2.5px;
+	position: relative;
+}
+#logRecordForm .container input {
+	left: 100px;
+	position: absolute;
+	top: 0;
+}
+#logRecordForm .container input.input {
+	width: 150px;
+}
+

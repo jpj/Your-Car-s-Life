@@ -1,0 +1,208 @@
+<config>
+	<option>
+		<projectincludepath>classes</projectincludepath>
+		<!--<additionalincludepath>/usr/local/lePerl/le_common_par</additionalincludepath>
+		<additionalincludepath>/usr/local/lePerl/le_commonweb_par</additionalincludepath>-->
+		<additionalincludepath>/home/josh/workspace/le_common/lib</additionalincludepath>
+		<additionalincludepath>/home/josh/workspace/le_commonweb/lib</additionalincludepath>
+	</option>
+	<views>
+		<!-- Includes -->
+		<view id="include/docHeader">
+			<url>view/include/docHeader.html</url>
+		</view>
+		<view id="include/pageHeader">
+			<url>view/include/pageHeader.html</url>
+		</view>
+		<view id="include/pageFooter"><url>view/include/pageFooter.html</url></view>
+		<view id="include/docFooter"><url>view/include/docFooter.html</url></view>
+
+		<!-- Pages -->
+		<view id="indexView"><url>view/index.html</url></view>
+		<view id="vehicleLogView"><url>view/vehicle-log.html</url></view>
+		<view id="manageVehiclesView"><url>view/manage-vehicles.html</url></view>
+
+		<!-- XML Views -->
+		<view id="commonXmlView"><url>view/common.xml</url></view>
+		<view id="accessDeniedXmlView"><url>view/error/accessDenied.xml</url></view>
+		<view id="saveLogRecordView"><url>view/saveLogRecordView.xml</url></view>
+		<view id="getVehiclesView"><url>view/getVehicles.xml</url></view>
+
+		<!-- Error Views -->
+		<view id="notFoundView"><url>view/error/notFound.html</url></view>
+		<view id="accessDeniedView"><url>view/error/accessDenied.html</url></view>
+	</views>
+	<mappings>
+		<mapping>
+			<requesturl>/</requesturl>
+			<pbean>indexController</pbean>
+		</mapping>
+		<mapping>
+			<requesturl>/log</requesturl>
+			<pbean>vehicleLogController</pbean>
+		</mapping>
+		<mapping>
+			<requesturl>/vehicle</requesturl>
+			<pbean>manageVehiclesController</pbean>
+		</mapping>
+
+		<!-- Error Documents -->
+		<mapping>
+			<requesturl>/error/notFound</requesturl>
+			<pbean>notFoundController</pbean>
+		</mapping>
+
+		<!-- XML Mappings -->
+		<mapping>
+			<requesturl>/data/login</requesturl>
+			<pbean>loginXmlController</pbean>
+		</mapping>
+		<mapping>
+			<requesturl>/data/logout</requesturl>
+			<pbean>logoutXmlController</pbean>
+		</mapping>
+		<mapping>
+			<requesturl>/data/getLogRecords</requesturl>
+			<pbean>getLogRecordsController</pbean>
+		</mapping>
+		<mapping>
+			<requesturl>/data/saveLogRecord</requesturl>
+			<pbean>saveLogRecordController</pbean>
+		</mapping>
+		<mapping>
+			<requesturl>/data/getVehicles</requesturl>
+			<pbean>getVehiclesController</pbean>
+		</mapping>
+	</mappings>
+	<pbeans>
+		<!-- Database Connector -->
+		<pbean id="dbConnector">
+			<package>com::le::common::util::DbConnector</package>
+			<property method="setDbUrl">
+				<value>dbi:mysql:AUTOLOGGER</value>
+			</property>
+			<property method="setUserName">
+				<value>autologger</value>
+			</property>
+			<property method="setPassword">
+				<value>vessEpIdd</value>
+			</property>
+		</pbean>
+
+		<!-- Daos -->
+		<pbean id="userDao">
+			<package>com::le::ycl::dao::impl::UserDaoDbi</package>
+			<property method="setDbConnector">
+				<ref pbean="dbConnector"/>
+			</property>
+		</pbean>
+		<pbean id="logRecordDao">
+			<package>com::le::ycl::dao::impl::LogRecordDaoDbi</package>
+			<property method="setDbConnector">
+				<ref pbean="dbConnector"/>
+			</property>
+		</pbean>
+		<pbean id="vehicleDao">
+			<package>com::le::ycl::dao::impl::VehicleDaoDbi</package>
+			<property method="setDbConnector">
+				<ref pbean="dbConnector"/>
+			</property>
+			<property method="setUserDao">
+				<ref pbean="userDao"/>
+			</property>
+		</pbean>
+
+		<!-- Controllers -->
+		<pbean id="indexController">
+			<package>Modi::framework::mvc::Controller</package>
+			<property method="setViewName">
+				<value>indexView</value>
+			</property>
+		</pbean>
+		<pbean id="vehicleLogController">
+			<package>com::le::ycl::controller::LoginVerificationController</package>
+			<property method="setViewName">
+				<value>vehicleLogView</value>
+			</property>
+		</pbean>
+		<pbean id="manageVehiclesController">
+			<package>com::le::ycl::controller::LoginVerificationController</package>
+			<property method="setViewName">
+				<value>manageVehiclesView</value>
+			</property>
+		</pbean>
+		<pbean id="loginXmlController">
+			<package>com::le::ycl::controller::LoginXmlController</package>
+			<property method="setViewName">
+				<value>commonXmlView</value>
+			</property>
+			<property method="setUserDao">
+				<ref pbean="userDao"/>
+			</property>
+		</pbean>
+		<pbean id="logoutXmlController">
+			<package>com::le::ycl::controller::LogoutXmlController</package>
+			<property method="setViewName">
+				<value>commonXmlView</value>
+			</property>
+		</pbean>
+		<pbean id="getLogRecordsController">
+			<package>com::le::ycl::controller::GetLogRecordsController</package>
+			<property method="setViewName">
+				<value>commonXmlView</value>
+			</property>
+			<property method="setLogRecordDao">
+				<ref pbean="logRecordDao"/>
+			</property>
+		</pbean>
+
+		<pbean id="saveLogRecordFormData">
+			<package>com::le::ycl::formdata::SaveLogRecordFormData</package>
+		</pbean>
+		<pbean id="saveLogRecordFormDataValidator">
+			<package>com::le::ycl::formdata::validator::SaveLogRecordFormDataValidator</package>
+		</pbean>
+		<pbean id="saveLogRecordController">
+			<package>com::le::ycl::controller::SaveLogRecordController</package>
+			<property method="setFormData">
+				<ref pbean="saveLogRecordFormData"/>
+			</property>
+			<property method="setValidator">
+				<ref pbean="saveLogRecordFormDataValidator"/>
+			</property>
+			<property method="setSuccessViewName">
+				<value>saveLogRecordView</value>
+			</property>
+			<property method="setLogRecordDao">
+				<ref pbean="logRecordDao"/>
+			</property>
+			<property method="setVehicleDao">
+				<ref pbean="vehicleDao"/>
+			</property>
+		</pbean>
+
+		<pbean id="getVehiclesFormData">
+			<package>com::le::ycl::formdata::GetVehiclesFormData</package>
+		</pbean>
+		<pbean id="getVehiclesController">
+			<package>com::le::ycl::controller::GetVehiclesController</package>
+			<property name="formData">
+				<ref pbean="getVehiclesFormData"/>
+			</property>
+			<property name="successViewName">
+				<value>getVehiclesView</value>
+			</property>
+			<property name="vehicleDao">
+				<ref pbean="vehicleDao"/>
+			</property>
+		</pbean>
+
+		<!-- Error Controllers -->
+		<pbean id="notFoundController">
+			<package>Modi::framework::mvc::Controller</package>
+			<property method="setViewName">
+				<value>notFoundView</value>
+			</property>
+		</pbean>
+	</pbeans>
+</config>

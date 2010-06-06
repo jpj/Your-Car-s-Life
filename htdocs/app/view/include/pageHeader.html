@@ -1,0 +1,35 @@
+<%
+my $user = $request->getSession()->getAttribute("user");
+my $loggedIn = $user ? 1 : 0;
+%>
+	</head>
+	<body>
+
+		<div id="page">
+			<div>
+				<form action="login0" method="post" id="loginForm">
+					<a href="/">Index</a> -
+		
+					<% if ($loggedIn) { %>
+		
+					Logged in as
+					<%=$user->getFirstName()%>,
+					<a href="/logout0" id="logout">Logout</a>
+					<span id="logoutMessage"></span>
+					<% } else { %>
+		
+					<input type="text" name="login" title="User Name" class="suggestion" />
+					<input type="password" name="password" title="password" class="suggestion" />
+					<span class="loginMessage"></span>
+					<input type="submit" value="Login" />
+					<a href="register" id="registration-link">Register</a>
+					<% } %>
+				</form>
+			</div>
+
+			<% if ($loggedIn) { %>
+			<ul>
+				<li><a href="/log">Log</a></li>
+				<li><a href="/vehicle">Vehicles</a></li>
+			</ul>
+			<% } %>
