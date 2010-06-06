@@ -5,4 +5,4 @@
 var LogRecordFilterInputData = function() {
 	this.logRecordId;
 	this.vehicleId;
-}
+};

@@ -28,5 +28,5 @@ var LogRecord = function() {
 			"";
 
 		return s;
-	}
-}
+	};
+};
